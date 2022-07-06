@@ -2,7 +2,6 @@
 
 ### 버전관리의 정의
 
-- 분산 버전 관리 시스템
 1. 버전이란 컴퓨터 소프트웨어의 특정 상태를 말한다.
 2. 일반적인 우리가 하는 버전 관리는 _1차, _2차, _최종 등 문서 작업을 할때의 보편적인 
 버전관리라 할 수 있다
@@ -35,7 +34,7 @@
 - 분산버전관리시스템은 원격 저장소(remote repository)를 통하여 협업하고,
 모든 히스토리를 클라이언트들이 공유를 한다.
 
-### 저장소를 만들고 기본 명령어를 써보자
+### 💡저장소를 만들고 기본 명령어를 써보자!
 
 - $ git init
   
@@ -111,3 +110,110 @@ Date:   Tue Jul 5 22:22:09 2022 +0900
     1 커밋완료
 #커밋 후 $git log로 커밋이 된 걸 확인한다 
 ```
+
+- $ git log 
+  - 현재 저장소에 기록된 커밋을 조회
+  - 다양한 옵션을 통해 로그를 조회 할 수 있다
+- 다얀한 명령어
+  - git log -1
+  - git log --oneline
+  - git log -2 --onelie
+
+![image-20220706203330657](Git 버전관리 .assets/image-20220706203330657.png)
+
+> 💡oneline = 한줄 -1,2는 갯수!
+
+- $ git status 
+  - Git 저장소에 있는 파일의 상태를 확인하기 위하여 활용
+    - 파일의 상태를 알 수 있다.
+      - Untracked files (**Git 저장소**에는 있지만 **Git이 관리**하지 않는다)
+      - Changes not staged for commit (수정한 파일이 Tracked 상태이지만 아직 **Staged** 상태는 아니라는 것이다. **Staged** 상태로 만들려면 git add 명령을 실행해야 한다.)
+      - changes to be commited (**Staged 상태**라는 것을 의미한다. 커밋하면 **git add** 를 실행한 시점의  파일이 커밋되어 저장소 히스토리에 남는다.)
+- Status로 확인 할 수 있는 파일의 상태
+  - Tracked : 이전부터 버전으로 관리되고 있는 파일
+    - Unmodified : git status에 나타나지 않음
+    - Modified : Changes not staged for commit
+    - Staged : Changes to be commit
+
+![image-20220706203453677](Git 버전관리 .assets/image-20220706203453677.png)
+
+> 💡 현재는 커밋이 모두 완료된 상태여서 커밋할게 없다!
+
+### Git의 기본 흐름
+
+- Modified : 파일이 수정된 상태 (add 명령어를 통하여 staging area로)
+- Staged : 수정한 파일을 곧 커밋할 것이라고 표시한 상태(commit 명령어로 저장소)
+- committed : 커밋이 된 상태
+
+| 현재상태          |                                             |
+| ----------------- | ------------------------------------------- |
+| Working Directory | 파일의 변경사항                             |
+| Staging Area      | 버전으로 기록하기 위한 파일 변경사항의 목록 |
+| Repository        | 커밋(버전)들이 기록되는 곳                  |
+
+### Git 설정 파일(config)
+
+- 사용자 정보 (commit author) : 커밋을 하기 위해 반드시 필요
+  - git config --global user.name "TocDX"
+    - **Github에서 설정한 username으로 설정**
+  - git config --global user.email "sk372021000@gmail.com"
+    - **Github에서 설정한 email로 설정**
+- 설정 확인
+  - git config -l
+  - git config -- global -l
+  - git config user.name
+- --system
+  - /etc/gitconfig
+  - 시스템의 모든 사용자와 모든 저장소에 적용 (관리자 권한)
+- --global
+  - ~/.gitconfig
+  - 현재 사용자에게  적용되는 설정
+- --local
+  - .git/config
+  - 특정 저장소에만 적용되는 설정
+
+
+
+### 분산버전 관리시스템
+
+- 중앙집중식버전관리시스템은 **중앙에서 버전을 관리하고 파일을 받아서 사용**
+- 분산버전관리시스템은 원격 저장소(remote repository)를 통하여 협업하고 
+  **모든 히스토리를 클라이언트들이 공유**
+
+
+
+### 원격저장소의 흐름
+
+
+
+![image](Git 버전관리 .assets/image.png)
+
+- local은 내 pc, remote는 GitHub이다.
+
+
+
+### 원격 저장소 만들기
+
+- New Repositiory
+
+  ![image-20220706225858737](Git 버전관리 .assets/image-20220706225858737.png)
+
+- 저장소 설정하기
+
+![image-20220706230122085](Git 버전관리 .assets/image-20220706230122085.png)
+
+
+
+- 로컬저장소의 버전을 원격 저장소로 보내주기
+
+![image-20220706230250229](Git 버전관리 .assets/image-20220706230250229.png)
+
+- $git remote add origin https://....
+  - 내 깃허브 네임과 저장소이름이 들어간 url을 원격저장소에 있는 origin을 추가해줘라
+
+- push하기
+  - $ git push <TocDX> <Master>
+    - 원격 저장소로 로컬 저장소 변경 사항(커밋)을 올림
+    - 로컬 폴더의 파일/폴더가 아닌 저장소 버전이 올라감
+
+![image-20220706230751099](Git 버전관리 .assets/image-20220706230751099.png)
