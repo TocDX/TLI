@@ -1,6 +1,4 @@
-# MARK DOWN
-
-## Markdown
+# 🖋 Markdown
 
 ### 개요
 
@@ -37,16 +35,16 @@
     - #의 개수에 따라 대응되는 수준(Heading level)이 있으며, h1~h6까지 표현 가능
     - 문서의 구조를 위해 작성되며 글자 크기를 조절하기 위해 사용되어서는 안됨
     
-    ![Untitled 2](MARK DOWN.assets/Untitled 2.png)
+    ![Untitled 2](./MARK%20DOWN.assets/Untitled%202.png)
     
 
 ### 마크다운 문법 - List
 
 - List는 순서가 있는 리스트(ol)와 순서가 없는 리스트(ul)로 구성
   
-    ![Untitled 3](MARK DOWN.assets/Untitled 3.png)
+    ![Untitled 3](./MARK%20DOWN.assets/Untitled%203.png)
     
-    ![Untitled 4](MARK DOWN.assets/Untitled 4.png)
+    ![Untitled 4](./MARK%20DOWN.assets/Untitled%204.png)
 
 ### 마크다운 문법 - Fenced Code block
 
@@ -77,51 +75,51 @@
 
 - 코드블록은 backtick 기호 1개를 인라인에 활용하여 작성(`)
 
-![Untitled 6](MARK DOWN.assets/Untitled 6.png)
+![Untitled 6](./MARK%20DOWN.assets/Untitled%206.png)
 
-![Untitled 5](MARK DOWN.assets/Untitled 5.png)
+![Untitled 5](./MARK%20DOWN.assets/Untitled%205.png)
 
 ### 마크다운 문법 - 링크
 
 - [내가 원하는 링크명] (링크)
     - 단축키 ctrl + 클릭
 
-![Untitled 7](MARK DOWN.assets/Untitled 7.png)
+![Untitled 7](./MARK%20DOWN.assets/Untitled%207.png)
 
-![Untitled 8](MARK DOWN.assets/Untitled 8.png)
+![Untitled 8](./MARK%20DOWN.assets/Untitled%208.png)
 
 ### 마크다운 문법 - 이미지
 
 - ![문자열](url)을 통해 이미지를 사용 가능
     - 특정 파일들을 포함하여 연결 시킬 수도 있음
     
-    ![Untitled 10](MARK DOWN.assets/Untitled 10.png)
+    ![Untitled 10](./MARK%20DOWN.assets/Untitled%2010.png)
     
-    ![Untitled 9](MARK DOWN.assets/Untitled 9.png)
+    ![Untitled 9](./MARK%20DOWN.assets/Untitled%209.png)
 
 ### 마크다운 문법 - Blockquotes (인용문)
 
 - >를 통해 인용문을 작성
 
-![Untitled 12](MARK DOWN.assets/Untitled 12.png)
+![Untitled 12](./MARK%20DOWN.assets/Untitled%2012.png)
 
-![Untitled 11](MARK DOWN.assets/Untitled 11.png)
+![Untitled 11](./MARK%20DOWN.assets/Untitled%2011.png)
 
 ### 마크다운 문법 - Table (표)
 
 - 표는 본문> 표 > 표 삽입 (ctrl + t)
     - 일부 지원 안되는 환경도 있다
     
-    ![Untitled 13](MARK DOWN.assets/Untitled 13.png)
+    ![Untitled 13](./MARK%20DOWN.assets/Untitled%2013.png)
     
 
 ### 마크다운 문법 - text 강조
 
 - 굵게(bold), 기울임(ltlic)을 통해 특정 글자들을 강조
 
-![Untitled 15](MARK DOWN.assets/Untitled 15.png)
+![Untitled 15](./MARK%20DOWN.assets/Untitled%2015.png)
 
-![Untitled 14](MARK DOWN.assets/Untitled 14.png)
+![Untitled 14](./MARK%20DOWN.assets/Untitled%2014.png)
 
 ### 마크다운 문법 - 수평선
 
@@ -129,6 +127,6 @@
 
 
 
-![Untitled 17](MARK DOWN.assets/Untitled 17.png)
+![Untitled 17](./MARK%20DOWN.assets/Untitled%2017.png))
 
-![Untitled 16](MARK DOWN.assets/Untitled 16.png)
+![Untitled 16](./MARK%20DOWN.assets/Untitled%2016.png)
