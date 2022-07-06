@@ -44,9 +44,9 @@
     .git 폴더가 생성되며 git bash에서는 (master)라는 표기를 확인할 수 있음
     
 
-![Untitled 19](Git 버전관리 .assets/Untitled 19.png)
+![Untitled 19](./Git%20%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%20.assets/Untitled%2018.png)
 
-![Untitled 18](Git 버전관리 .assets/Untitled 18.png)
+![Untitled 18](./Git%20%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%20.assets/Untitled%2019.png)
 
 <aside>
 💡 git init로 git 저장소를 만들어준다
