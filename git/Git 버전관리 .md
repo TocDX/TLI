@@ -217,3 +217,81 @@ Date:   Tue Jul 5 22:22:09 2022 +0900
     - 로컬 폴더의 파일/폴더가 아닌 저장소 버전이 올라감
 
 ![image-20220706230751099](./Git%20%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%20.assets/image-20220706230751099.png)
+
+### Git 들어가기전에
+
+- Git을 CLI(Command Line Interface)에서 활용하기 위해서는 아래의 명령은 필수적이다!
+  - $git status
+
+
+
+### Git Flow
+
+- Git을 활용하여 협업하는 흐름으로 branch를 활용하는 전략을 의미한다
+
+![git-flow_overall_graph](Git 버전관리 .assets/git-flow_overall_graph.png)
+
+
+
+| branch                       | 주요특징                                                     | 예시                            |
+| ---------------------------- | ------------------------------------------------------------ | ------------------------------- |
+| master(mainj)                | * 배포 가능한 상태                                           | LOL 클라이언트 라이브 버전      |
+| develop(main)                | *feature branch로 나뉘어지거나, 발생된 버그 수정 등 <br /> 개발 진행 * 개발 이후 release branch로 갈라짐 | 다음 패치를 위한 개발(9.24)     |
+| feature branches(supporting) | * 기능별 개발 브랜치(topic branch) * 기능이 반영되거나<br />드랍되는 경우 브랜치 삭제 | 개발시 기능별예)드래곤 업데이트 |
+| release branches(supporting) | * 개발 완료 이후 QA/Test 등을 통해 얻어진 다음 배포 전<br />minor bug fix 등 반영 | 9.24A, 9.24B                    |
+| hotfixes(supporting)         | * 긴급하게 반영 해야하는 bug fix * release branch는 다음 버전을 위한 것이라면, hotfix branch는 현재 버전을  위한 것 | 긴급 패치를 위한 작업           |
+
+```
+💡 Git Flow는 정해진 답이 있는 것은 아니다. Github Flow, Gitlab Flow 등의  각 서비스별
+제안되는 흐름이 있으며, 변형되어 각자의 프로젝트/회사에서 활용 되고 있다. 간단하게 브랜치를 활용하는 
+명령어를 알아보고 프로젝트에 활용할 수 있는 간단한 버전의 브랜치 전략을 알아보자
+```
+
+###  branch basic commands
+
+```bash
+# 브랜치 생성
+Wow@DESKTOP-GHSCJQG MINGW64 ~/Desktop/새 폴더/text1 (master)
+$ git branch example 
+
+#브랜치 이동
+Wow@DESKTOP-GHSCJQG MINGW64 ~/Desktop/새 폴더/text1 (master)
+$ git checkout example
+Switched to branch 'example'
+
+#브랜치 생성하면서 이동
+Wow@DESKTOP-GHSCJQG MINGW64 ~/Desktop/새 폴더/text1 (example)
+$ git checkout -b example1
+Switched to a new branch 'example1'
+
+#브랜치 목록
+Wow@DESKTOP-GHSCJQG MINGW64 ~/Desktop/새 폴더/text1 (example1)
+$ git branch
+  example
+* example1
+  master
+
+#브랜치 삭제
+Wow@DESKTOP-GHSCJQG MINGW64 ~/Desktop/새 폴더/text1 (example1)
+$ git branch -d example1
+error: Cannot delete branch 'example1' checked out at 'C:/Users/Wow/Desktop/새 폴더/text1'
+#오류난 이유 현재 위치해있는 브랜치에서 삭제는 불가능하다
+
+```
+
+### branch merge
+
+- 각 branch에서 작업을 한 이후 **이력을 합치기 위해서는 일반적으로 merge를 사용한다**
+  병합을 진행할 때, 만약 서로 다른 이력(commit)에서 동일한 파일을 수정한 경우 충돌이 발생할 수 있다
+  이 경우에는 반드시 직접 수정을 진행 해야 한다.
+  충돌이 발생한 것은 오류가 발생한 것이 아니라 이력이 변경되는 과정에서 반드시 발생할 수 있는것이다
+
+### Github Flow 기본 원칙
+
+- Github Flow는 Github에서 제안하는 브랜치 전략으로 다음과 같은 기본 원칙을 가지고 있다.
+
+1. master branch는 반드시  배포 가능한 상태여야 한다
+2. feature branch는 각 기능의 의도를 알 수 있도록 작성한다
+3. Commit message는 매우 중요하며, 명확하게 작성한다
+4. Pull Request를 통해 협업을 진행한다
+5. 변경사항을 반영하고 싶다면 master branch에 병합한다
