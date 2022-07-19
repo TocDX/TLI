@@ -12,7 +12,6 @@ fruits = [
 ]
 
 fruit_count = {}
-
 for fruit in fruits:
     #print(fruit)
     if fruit not in fruit_count:

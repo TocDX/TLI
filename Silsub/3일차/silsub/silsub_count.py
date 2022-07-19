@@ -12,4 +12,4 @@ for i in numbers:
         # 1씩 증가시킨다
         cnt += 1
 # 결과
-print(cnt) 
+print(str(cnt)) 

@@ -1,23 +1,8 @@
 ## 1회차 실습
 ---
 
-[1번](./01_silsub.py)
+[1일차](./1%EC%9D%BC%EC%B0%A8/README.md)
 
-[2번](./02_silsub.py)
+[2일차](./2%EC%9D%BC%EC%B0%A8/README.md)
 
-[3번](./03_silsub.py)
-
-[3번_2](./03_silsub_for.py)
-
-[4번](./04_silsub_for.py)
-
-[4번_2](./04_silsub_while.py)
-
-[5번](./05_silsub.py)
-
-[6번](./06_silsub.py)
-
-[7번](./07.silsub.py)
-
-[8번](./08_silsub.py)
-
+[3일차](./3%EC%9D%BC%EC%B0%A8/README.md)

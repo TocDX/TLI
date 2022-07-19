@@ -16,4 +16,4 @@ for i in students:
     if i == a:
         # 카운트의 숫자를 1씩 증가시켜라
         count += 1
-print(count)
+print(i, count)
