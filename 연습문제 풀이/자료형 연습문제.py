@@ -3,9 +3,6 @@
 # 국어 80
 # 영어 75
 # 수학 55
-from platform import python_branch
-
-
 korean = 80
 english = 75
 math = 55 
