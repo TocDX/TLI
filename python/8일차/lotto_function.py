@@ -13,4 +13,6 @@ def lotto(n):
         result.append(pick)
         return result
 
+def check
+
 print(lotto(3))

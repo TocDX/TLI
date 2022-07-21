@@ -20,4 +20,4 @@ a.sort()
 print(a)
 
 a, b = input()
-print(a, b)
+print( b)

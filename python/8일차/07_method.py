@@ -13,7 +13,7 @@ class MyClass:
     def instance_method(self):
         return self, self.instance_variable
     # 클래스 메서드
-    @classmethod
+    @classmethod # 데코레이터 : 함수를 꾸며주는 것이지만 지금은 보기만.
     def class_method(cls):
         return cls, cls.instance_method
     # 스태틱 메서드
