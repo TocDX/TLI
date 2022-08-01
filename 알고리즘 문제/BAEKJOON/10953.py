@@ -22,9 +22,7 @@
 # 17
 # 7
 
-t = int(input())
-
-for i in range(t):
-    # ','을 넣는 이유는 예제에 ,이 들어가니 ,전후로 나누어주라는 명령어
-    a, b = map(int,input().split(',')) 
+T = int(input())
+for i in range(T):
+    a,b = map(int, input().split(","))
     print(a+b)
