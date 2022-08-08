@@ -27,6 +27,6 @@ t = int(input()) # 테스트 케이스를 받아줄 input
 
 # 테스트 케이스를 반복해줄 반복문
 for i in range(1,t+1):
-    a, b = map(int, input().split(",")) # a,b 를 받아줄 input
+    a, b = map(int, input().split()) # a,b 를 받아줄 input
 
     print(a+b)
