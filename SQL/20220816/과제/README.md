@@ -178,7 +178,7 @@ COUNT(*)
 32
 ```
 
-흡연수치가 3이고 음주 수치가 2이고 좌우 시력이 1.5이고 키가 180 이상 남자 id 수를 구하시오
+흡연수치가 3이고 음주 수치가 2이고 좌우 시력이 1.5이고 키가 180 이상 남자 id 수를 구하시오1
 
 ```sql
  SELECT COUNT(id) FROM healthcare WHERE height >= 180 and is_drinking = 2 and smoking = 3 and va_left = 1.5 and va_right = 1.5 and gender = 1;
