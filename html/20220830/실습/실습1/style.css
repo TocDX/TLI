@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+/* html */
+html {
+  font-size: 16px;
+}
+
+/* title */
+.title {
+  margin: 0 auto;
+  
+}
+
+.sub_title {
+ 
+  text-align: center;
+}
+
+.main_title {
+  margin-top: -20px;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* main */
+.article {
+  width: 870px;
+  margin: 50px 470px 50px;
+  border-radius: 10px;
+  padding: 0 10px 10px;
+  
+}
+
+.content {
+  display: inline-block;
+  width: 280px;
+  height: 400px;
+  margin: 10px 0 0px;
+  border-radius: 10px;
+  padding: 12px;
+
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.installation {
+  margin: 6px 0 0;
+  padding: 0 10px 0;
+  font-size: 0.7em;
+  color: grey;
+}
+
+.content_title {
+  margin: 6px 0 0;
+  padding: 0 10px 0;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.content_main {
+  margin: 10px 0 0;
+  padding: 0 10px 0;
+  font-size: 0.6em;
+  color: grey;
+}
