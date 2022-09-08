@@ -1,0 +1,82 @@
+.link-item{
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+.navbar{
+  background-color: rgb(246, 246, 246);
+}
+.link-it{
+  margin: 0 1rem;
+}
+
+.nav-item{
+  margin: 0 0rem;
+}
+
+.h1-text{
+  font-weight: bold;
+}
+
+.tax{
+  font-size: 22px;
+  text-decoration:line-through;
+  margin: 0 0.3rem
+}
+.tax1{
+  font-size: 22px;
+  margin: 0 0.3rem
+}
+
+.lorem{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.form-control{
+  display: block;
+  width: 7%;
+  border: 1px solid #ced4da;
+}
+
+.main-sec{
+  margin: 4rem 0;
+  
+}
+
+
+
+
+.fw-bolder{
+  margin: 0 0rem;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.dor-text{
+  text-decoration: line-through;
+}
+
+.bi-main{
+  color: rgb(254, 230, 107);
+}
+
+.card-footer1{
+  margin: 0.8rem 0;
+}
+
+.card-footer3{
+  margin: 0.8rem 0;
+}
+
+
+.footer{
+  height: 100px;
+}
+
+.footer-text{
+  color: white;
+  margin: 2.5rem 0;
+}

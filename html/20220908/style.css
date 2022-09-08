@@ -1,0 +1,88 @@
+.link-item{
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+.navbar{
+  background-color: rgb(246, 246, 246);
+}
+.link-it{
+  margin: 0 1rem;
+}
+
+.nav-item{
+  margin: 0 0rem;
+}
+
+.img-cart{
+  width: 1.5rem;
+}
+
+.card{
+  height: 15rem;
+}
+.shop-text{
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+}
+.p-text{
+  color: gray;
+  font-size: 20px;
+}
+
+.card-text1{
+  text-decoration:line-through
+}
+
+.bi{
+  color: rgb(255, 208, 68);
+}
+.badge{
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.card-footer1{
+  padding-top: 2.4rem;
+}
+.card-footer2{
+  padding-top: 3.8rem;
+}
+
+.card-footer3{
+  padding-top: 1.2rem;
+}
+
+.card-footer4{
+  padding-top: 4rem;
+}
+
+.card-footer5{
+  padding-top: 4rem;
+}
+
+.card-footer6{
+  padding-top: 2.3rem;
+}
+
+.bi-main{
+  display: flex;
+  justify-content: center;
+}
+
+.footer{
+  height: 100px;
+}
+
+.footer-text{
+  color: white;
+  margin: 2.5rem 0;
+}
