@@ -1,0 +1,59 @@
+.navbar{
+  background-color: rgb(33, 37, 41);
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.nav-item{
+  color: white;
+  text-decoration: none;
+}
+
+.nav-main-item{
+  text-decoration: none;
+  color: white;
+} 
+
+p{
+  font-size: 17px;
+
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sentece{
+  margin: 6rem 0;
+}
+
+.card{
+  display: flex;
+}
+
+.p-text{
+  color: white;
+}
+
+.card-title{
+ 
+  font-size: 25px;
+}
+
+.footer{
+  height: 100px;
+}
+
+.footer-text{
+  color: white;
+  margin: 2.5rem 0;
+}
