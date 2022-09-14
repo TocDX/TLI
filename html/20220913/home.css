@@ -1,0 +1,33 @@
+.nav-bar{
+  background-color: rgb(50, 50, 50);
+}
+
+.nav-logo{
+  width: 5rem;
+}
+
+.nav-menu-item{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-menu-items{
+  list-style: none;
+}
+
+.nav-items{
+  margin: 0 1rem;
+}
+
+.nav-modal{
+  margin: 1.2rem 20rem;
+}
+
+.main-photo{
+  width: 100%;
+}
+
+.boxoffice-text{
+  font-weight: bolder;
+}
+
