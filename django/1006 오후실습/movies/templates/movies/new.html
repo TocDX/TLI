@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <form action="{% url 'movies:create' %}" method='POST'>
+    {% csrf_token %}
+    {{ movie_form.as_p }}
+    <input type="submit" vlaue='추가'>
+  </form>
+{% endblock %}

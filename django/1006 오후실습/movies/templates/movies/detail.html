@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <p>{{ movies.ruuning_time }}</p>
+  <p>{{ movies.title }}</p>
+  <p>{{ movies.summary }}</p>
+
+  <a href="{% url 'movies:update' movies.pk %}">수정하기</a>
+  <a href="{% url 'movies:delete' movies.pk %}">삭제하기</a>
+{% endblock %}
