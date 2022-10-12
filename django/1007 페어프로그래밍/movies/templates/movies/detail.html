@@ -33,6 +33,9 @@
           <button type="submit" class="btn btn-primary">
             <a href="{% url 'movies:update' movies.pk %}" style='color:white;'>수정하기</a>
           </button>
+          <button type="submit" class="btn btn-primary">
+            <a href="{% url 'movies:index' %}" style='color:white;'>홈으로</a>
+          </button>
         </div>
       </div>
     {% endblock %}

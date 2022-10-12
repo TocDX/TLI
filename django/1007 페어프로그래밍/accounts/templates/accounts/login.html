@@ -1,0 +1,8 @@
+{% block body %}
+  <h1>로그인</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+      <button type="submit" content="OK">OK</button>
+    </form>
+  {% endblock body %}

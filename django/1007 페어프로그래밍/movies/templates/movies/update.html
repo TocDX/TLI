@@ -1,47 +1,11 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %}
 
-{% load static %}
-
-<head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</head>
 {% block content %}
-  <div class=" d-flex justify-content-center" style="background-color: rgb(196, 196, 196);">
-    <form action="{% url 'movies:create' %}" method='POST'>
-      {% csrf_token %}
-      <div class="container">
-        <img src="https://c.wallhere.com/photos/12/39/1920x1080_px_Up_movie-1348803.jpg!d" class="img-fluid" alt="Responsive image">
-        <div class="info my-5">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">리뷰 제목</span>
-            </div>
-            <input type="text" class="form-control">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">리뷰 내용</span>
-            </div>
-            <textarea class="form-control" cols="30" rows="5" placeholder="160자까지 입력할 수 있습니다."></textarea>
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">영화 이름</span>
-            </div>
-            <input type="text" class="form-control">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text">영화 평점</span>
-            </div>
-            <input type="number" class="form-control">
-          </div>
-          <div class="review">
-            <button type="submit" class="btn btn-primary">리뷰 작성완료</button>
-          </div>
-        </div>
-      </form>
-    {% endblock content %}
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form movie_form %}
+    <input type="submit" class='btn btn-primary' value='작성'>
+  </form>
+{% endblock %}
