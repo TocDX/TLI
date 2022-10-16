@@ -8,12 +8,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 {% block content %}
-  <h1 class="container d-flex justify-content-center my-5">회원가입</h1>
-  <div class="content container d-flex justify-content-center">
-    <form action="" method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" content="OK">OK</button>
-    </form>
-  </div>
+  <h1>프로필 업데이트</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" content="OK">OK</button>
+  </form>
 {% endblock content %}

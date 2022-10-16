@@ -9,13 +9,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 {% block content %}
+  <div class="content container d-flex justify-content-center">
+    <form action="" method="POST">
+      {% csrf_token %}
 
-  <form action="" method="POST">
-    {% csrf_token %}
-
-    {% bootstrap_form movie_form %}
-    {# article_form.as_p #}
-    <!-- <label for="title">제목 : </label> <input type="text" name="title" id="title" required> <label for="content">내용 : </label> <textarea name="content" id="content" cols="30" rows="10" required></textarea> -->
-    <input type="submit" class='btn btn-primary' value='작성'>
-  </form>
+      {% bootstrap_form movie_form %}
+      {# article_form.as_p #}
+      <!-- <label for="title">제목 : </label> <input type="text" name="title" id="title" required> <label for="content">내용 : </label> <textarea name="content" id="content" cols="30" rows="10" required></textarea> -->
+      <input type="submit" class='btn btn-primary' value='작성'>
+    </form>
+  </div>
 {% endblock content %}
