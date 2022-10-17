@@ -10,7 +10,7 @@
 </head>
 {% block content %}
   <div class="content container d-flex justify-content-center">
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
 
       {% bootstrap_form movie_form %}

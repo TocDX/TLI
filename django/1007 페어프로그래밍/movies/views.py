@@ -9,9 +9,9 @@ def main(request):
 @login_required
 def create(request):
     if request.method == 'POST':
-        movie_form = MovieForm(request.POST)
+        movie_form = MovieForm(request.POST, request.FILES)
         if movie_form.is_valid():
-            movie_form.save()
+            movie_form.save() 
             return redirect('movies:index')
     else:
         movie_form = MovieForm()
@@ -39,7 +39,7 @@ def detail(request,pk):
 def update(request,pk):
     movies = Movie.objects.get(pk=pk)
     if request.method == 'POST':
-        movie_form = MovieForm(request.POST, instance=movies)
+        movie_form = MovieForm(request.POST, request.FILES, instance=movies)
         if movie_form.is_valid():
             movie_form.save()
             return redirect('movies:detail', movies.pk)
@@ -49,3 +49,9 @@ def update(request,pk):
         'movie_form':movie_form
     }
     return render(request, 'movies/update.html', context)
+
+def delete(request, pk):
+  # pk에 해당하는 글 삭제
+  Movie.objects.get(id=pk).delete()
+
+  return redirect('movies:index')

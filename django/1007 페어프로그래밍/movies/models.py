@@ -1,4 +1,7 @@
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
 from django.db import models
+
 
 # Create your models here.
 class Movie(models.Model):
@@ -8,3 +11,7 @@ class Movie(models.Model):
     grade = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    image = ProcessedImageField(upload_to='imges/', blank=True,
+                                processors=[ResizeToFill(600,500)],
+                                format='JPEG',
+                                options={'quality': 60})
