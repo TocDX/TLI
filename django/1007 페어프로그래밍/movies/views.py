@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import Movie
-from .forms import MovieForm
+from .models import Movie,Comment
+from .forms import MovieForm, CommentForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 def main(request):
@@ -29,8 +29,12 @@ def index(request):
 
 def detail(request,pk):
     movies = Movie.objects.get(pk=pk)
+    comment_form = CommentForm()
     context = {
-        'movies':movies
+        'movies':movies,
+        'comments': movies.comment_set.all(),
+        'comment_form': comment_form
+
     }
     return render(request, 'movies/detail.html', context)
 
@@ -55,3 +59,17 @@ def delete(request, pk):
   Movie.objects.get(id=pk).delete()
 
   return redirect('movies:index')
+
+def comment_create(request,pk):
+    movies = Movie.objects.get(pk=pk)
+    comment_form = CommentForm(request.POST)
+    if comment_form.is_valid():
+       comment =  comment_form.save(commit=False)
+       comment.movies = movies
+       comment.save()
+    return redirect('movies:detail', movies.pk )
+
+def comment_delete(request, movie_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    comment.delete()
+    return redirect('movies:detail', movie_pk)

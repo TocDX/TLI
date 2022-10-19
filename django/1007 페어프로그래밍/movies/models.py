@@ -15,3 +15,7 @@ class Movie(models.Model):
                                 processors=[ResizeToFill(600,500)],
                                 format='JPEG',
                                 options={'quality': 60})
+class Comment(models.Model):
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    movies = models.ForeignKey(Movie, on_delete=models.CASCADE)
