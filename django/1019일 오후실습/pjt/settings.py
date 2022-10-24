@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'article',
+    'accounts',
+    'widget_tweaks',
     'django_bootstrap5',
     'django_extensions',
     'imagekit',
@@ -132,6 +134,8 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User Model
+AUTH_USER_MODEL = 'auth.User'
+
 AUTH_USER_MODEL = 'accounts.User'
 
 # Message Framework

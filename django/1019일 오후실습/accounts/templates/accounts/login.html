@@ -1,0 +1,30 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container d-flex align-content-center" style="position: absolute; left: 60%; top:50%; transform: translate(-50%, -50%);">
+      <div class="">
+        <img src="{% static 'images/main-logo.gif'%}" alt="">
+      </div>
+      <div style="background: #fff; border: 1px solid #dfdfdf; width: auto%; height: auto;">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <img src="{% static 'images/logo.PNG' %}" class="my-3" style="margin-left: 80px; cursor: pointer; width: 50%;" alt="">
+          {% bootstrap_form form %}
+          <input type="submit" value="로그인" class="btn btn-primary" style="margin: 0px 170px">
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

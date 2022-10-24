@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container d-flex align-content-center" style="position: absolute; left: 60%; top:50%; transform: translate(-50%, -50%);">
+      <div class="">
+        <img src="{% static 'images/main-logo.gif'%}" alt="">
+      </div>
+      <div style="background: #fff; border: 1px solid #dfdfdf; width: auto%; height: auto;">
+        <img src="{% static 'images/logo.PNG' %}" class="my-3" style="margin-left: 110px; cursor: pointer; width: 50%;" alt="">
+        <div class=" d-block">
+          <div class="my-3 ">
+            <a href="{% url 'accounts:login' %}">
+              <input type="submit" value="로그인" style="width: 50%; margin: 0px 110px;" class="btn btn-primary">
+            </a>
+          </div>
+          <div>
+            <a href="{% url 'accounts:signup' %}">
+              <input type="submit" value="회원가입" class="btn btn-primary" style="width: 50%; margin: 0px 110px;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

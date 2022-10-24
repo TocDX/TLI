@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static%}
+
+<head>
+  <link rel="stylesheet" href="{% static "index.css" %}"/>
+</head>
+
+<body>
+
+  {% block content %}
+    <section class="main" style="display: flex; justify-content: center; padding-top: 50px">
+      {% for articles in article %}
+        <div class="wrapper">
+          <div class="left-col">
+            <div class="post container " style=" width: 100%;  height: auto; border-radius: 10px; background: #fff; border: 1px solid #dfdfdf; margin-top: 70px;">
+              <div class="info">
+                <div class="user">
+                  <div class="profile-pic"><img src="img/cover1.png" alt=""></div>
+                  <p class="username" style=" font-weight: bold; color: #000; font-size: 14px">{{ articles.user.username }}</p>
+                </div>
+              </div>
+              {% if articles.image %}
+                <img src="{{ articles.image.url }}" class="post-image" alt="articles.image">
+              {% endif %}
+              <div class="post-content">
+                <div class="reaction-wrapper">
+                  <img src="img/like.PNG" class="icon" alt="">
+                  <img src="img/comment.PNG" class="icon" alt="">
+                  <img src="img/send.PNG" class="icon" alt="">
+                  <img src="img/save.PNG" class="save icon" alt="">
+                </div>
+                <p>
+                  {{ articles.title }}
+                </p>
+                <p class="post-time">{{ articles.updated_at }}</p>
+              </div>
+              <div class="comment-wrapper">
+                <a href="{% url 'article:detail' articles.pk %}" class="text-decoration-none">댓글 더 보기</a>
+              </div>
+            </div>
+          {% endfor %}
+        </section>
+      {% endblock content %}
+    </body>

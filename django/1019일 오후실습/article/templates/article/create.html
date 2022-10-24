@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static%}
+
+{% block content %}
+  <div id="modal_add_feed" class="modal_overlay">
+    <div class="modal_window">
+      <div class="modal_title">
+        <div class="modal_title_side"></div>
+        <div>
+          새 게시물
+        </div>
+        <div class="modal_title_side">
+          <span id="close_modal" class="material-icons-outlined">
+            close
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal_add_feed");
+    const buttonAddFeed = document.getElementById("add_feed");
+    buttonAddFeed.addEventListener("click", e => {
+      modal.style.display = "flex";
+    });
+  </script>
+{% endblock content %}
