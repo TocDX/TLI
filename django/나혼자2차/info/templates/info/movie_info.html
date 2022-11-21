@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+  <div class="container text-center">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+      {% for com in movie %}
+        <a href="{% url 'info:info_detail' com.pk %}">
+          <img class="col my-3" src="{{ com.image.url }}" style="width:100%; border-radius:40px;">
+        </a>
+      {% endfor %}
+    </div>
+    <div class=""></div>
+  </div>
+
+{% endblock %}

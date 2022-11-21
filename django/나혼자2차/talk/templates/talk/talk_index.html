@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load social_share %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div class="">
+    <div class="container content pb-1 pt-0">
+      <p class="mb-5 text-center text-secondary content-sub-title"></p>
+      <div class="table-responsive  rounded-1 p-2 d-none d-md-block">
+        <table class="table custom-table text-center">
+          <thead style="background-color:white; border-radius: 50px;">
+            <tr>
+              <th scope="col-1">탭</th>
+              <th scope="col-8">글 제목</th>
+              <th scope="col-1">글쓴이</th>
+              <th scope="col-1">작성일</th>
+              <th scope="col-1">조회수</th>
+            </tr>
+          </thead>
+          {% for com in pageboard %}
+            <tbody style="background-color:rgb(236, 236, 236);">
+              <tr scope="row">
+                <td>
+                  {{ com.category }}
+                </td>
+                <td>
+                  <a class="link-secondary" href="{% url 'talk:talk_detail' com.pk %}" style="text-decoration:none;">
+                    {{ com.title|truncatechars:15 }}</a>
+                </td>
+                <td>
+
+                  {% if com.user.profile_image %}
+                    <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{{ com.user.profile_image.url }}" alt="">
+                  {% else %}
+                    <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{% static 'images/logo.png' %}" alt="">
+                  {% endif %}
+                  {{ com.user.nickname }}
+                </td>
+                <td>{{ com.created_at|date:'Y-m-d H:i' }}</td>
+                <td>{{ com.hits }}</td>
+              </tr>
+            </tbody>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="">
+        <button class="btn btn-outline-dark mt-5" type="button" onclick="location.href='{% url 'talk:talk_create' %}'">
+          <span class="material-symbols-outlined fs-6 fw-bold">
+            쓰기
+          </span>
+        </button>
+      </div>
+    </div>
+    <div>
+      <ul class="pagination justify-content-center" style="margin-top:70px;">
+        <!-- 이전페이지 -->
+        {% if pageboard.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ pageboard.previous_page_number }}">이전</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+          </li>
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in pageboard.paginator.page_range %}
+          {% if page_number >= pageboard.number|add:-5 and page_number <= pageboard.number|add:5 %}
+            {% if page_number == pageboard.number %}
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+              </li>
+            {% else %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <!-- 다음페이지 -->
+        {% if pageboard.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ pageboard.next_page_number }}">다음</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+          </li>
+        {% endif %}
+      </ul>
+      <!-- 페이징처리 끝 -->
+    </div>
+
+    {% endblock content %}

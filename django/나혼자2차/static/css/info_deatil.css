@@ -1,0 +1,111 @@
+li {
+  margin: 0 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.bg__gr {
+  width: 100%;
+  height: 450px;
+  background-image: linear-gradient(
+    to right,
+    rgba(31.5, 10.5, 10.5, 1) 150px,
+    rgba(31.5, 10.5, 10.5, 0.84) 100%
+  );
+
+}
+
+.bg__img {
+  width: 100%;
+  height: 450px;
+  background-position: right -200px top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.movie-info {
+  justify-content: center;
+}
+
+.movie-img {
+  width: 300px;
+  height: 500px;
+}
+
+.movie-text {
+  margin-top: 3.5rem;
+}
+
+.btn-img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.img-director {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.director-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.name {
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-top: 2rem;
+}
+
+.job {
+  font-size: 15px;
+  color: white;
+}
+
+.director-group {
+  margin: 0 6rem;
+}
+
+.title-director {
+  background-color: rgb(50, 50, 50);
+}
+
+.carousel {
+  width: 800px;
+}
+
+.name-text {
+  margin-bottom: 0px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.bi-star-fill {
+  color: rgb(236, 194, 67);
+}
+
+.review-main {
+  margin: -8px 0;
+}
+
+.star-img {
+  display: inline-block;
+  margin: -20px 0;
+}
+
+.review-text {
+  color: white;
+  font-size: 14px;
+}
+
+.movie-list {
+  width: 200px;
+}

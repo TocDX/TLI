@@ -1,0 +1,66 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css %}{% endblock css %}
+    <title>Document</title>
+    {% block header %}{% endblock %}
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <ul class="menu">
+          <li class="apple-logo">
+            <a href="{% url 'movie:index' %}">MovieRover</a>
+          </li>
+          <li>
+            <a href="{% url 'movie:movie_talk' %}">영화수다</a>
+          </li>
+          <li>
+            <a href="{% url 'info:movie_info' %}">영화정보</a>
+          </li>
+          <li>
+            <a href="{% url 'talk:talk_index' %}">끄적끄적</a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link ms-2" href="{% url 'accounts:profile' user.nickname %}">
+                {{ request.user.nickname }}님의 프로필
+              </a>
+            </li>
+            <li>
+              <a class="nav-link ms-2" href="{% url 'accounts:logout' %}">로그아웃</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{% url 'accounts:login' %}">로그인</a>
+            </li>
+            <li>
+              <a href="javascript:void(0)">회원가입</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer class="text-center">
+      <div class="position-sticky bottom-0 w-100 d-flex justify-content-center bg-dark mt-5 py-5" style="color:white;">
+        <div class="py-2">
+          <p class="m-0 fw-0">
+            Copyright ⓒ 2022 MovieRover.com, All Rights Reserved.
+            <br>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

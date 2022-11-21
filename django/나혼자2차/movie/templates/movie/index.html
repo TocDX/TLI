@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div class="container d-flex">
+    <div class=" row g-0 text-center">
+      <div class="card my-5 mx-4" style="width:30rem;">
+        <a href="{% url 'movie:movie_talk' %}" style="text-decoration: none;">
+          <h5 class="card-header text-start" style="color:black;">영화수다</h5>
+        </a>
+        <div class="card-body text-start">
+          <img src="{% static 'images/1.png' %}" style="position:absolute; z-index: 1; margin-top: 7px; width:25px;" alt="">
+          <img src="{% static 'images/number-2.png' %}" style="position:absolute; z-index: 1; margin-top: 50px; width:25px;" alt="">
+          <img src="{% static 'images/three.png' %}" style="position:absolute; z-index: 1; margin-top: 90px; width:25px;" alt="">
+          <img src="{% static 'images/number-four.png' %}" style="position:absolute; z-index: 1; margin-top: 130px; width:25px;" alt="">
+          <img src="{% static 'images/number-5.png' %}" style="position:absolute; z-index: 1; margin-top: 170px; width:25px;" alt="">
+          <img src="{% static 'images/six.png' %}" style="position:absolute; z-index: 1; margin-top: 210px; width:25px;" alt="">
+          {% for com in movie %}
+            <ul class="list-group list-group-flush ">
+              <a href="{% url 'movie:mov_detail' com.pk%}" style="text-decoration: none; color:black;">
+                <li class="list-group-item mx-3">{{ com.title }}
+                </a>
+                <img style="width:15px; margin-top:-5px; " src="{% static 'images/view.png' %}" alt="">
+                <span class="text-black" style="color:blue; font-size: 13px;">{{ com.hits }}</span>
+                <img style="width:15px; margin-top:-5px; " src="{% static 'images/like.png' %}" alt="">
+                <span class="text-black" style="position: absolute; font-size: 13px; margin-left: 02px; margin-top:4px;">
+                  {{ com.like.all | length }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="card my-5" style="width:30rem;">
+        <a href="{% url 'info:movie_info' %}" style="text-decoration: none;">
+          <h5 class="card-header text-start" style="color:black">영화정보</h5>
+        </a>
+        <div class="card-body">
+          <img src="{% static 'images/1.png' %}" style="position:absolute; z-index: 1; margin-top: 7px; right: 27.4rem; width:25px;" alt="">
+          <img src="{% static 'images/number-2.png' %}" style="position:absolute; z-index: 1; margin-top: 50px; right: 27.4rem; width:25px;" alt="">
+          <img src="{% static 'images/three.png' %}" style="position:absolute; z-index: 1; margin-top: 90px; right: 27.4rem; width:25px;" alt="">
+          <img src="{% static 'images/number-four.png' %}" style="position:absolute; z-index: 1; margin-top: 130px; right: 27.4rem; width:25px;" alt="">
+          <img src="{% static 'images/number-5.png' %}" style="position:absolute; z-index: 1; margin-top: 170px; right: 27.4rem; width:25px;" alt="">
+          <img src="{% static 'images/six.png' %}" style="position:absolute; z-index: 1; margin-top: 210px; right: 27.4rem; width:25px;" alt="">
+          {% for info in infos %}
+            <ul class="list-group list-group-flush">
+              <a href="{% url 'info:info_detail' info.pk %}" style="color:black; text-decoration: none;">
+                <li class="list-group-item text-start mx-3">{{ info.title }}
+                </a>
+                <img style="width:15px; margin-top:-5px; " src="{% static 'images/view.png' %}" alt="">
+                <span style="color:blue; font-size: 13px;">{{ info.hits }}</span>
+                <img style="width:15px; margin-top:-5px; " src="{% static 'images/like.png' %}" alt="">
+                <span class="text-black" style="position: absolute; font-size: 13px; margin-left: 02px; margin-top:2.5px;">
+                  {{ info.like.all | length }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="card mx-4" style="width:30rem;">
+        <a href="" style="text-decoration: none;">
+          <h5 class="card-header text-start" style="color:black">끄적끄적</h5>
+        </a>
+        <div class="card-body text-start">
+          <img src="{% static 'images/1.png' %}" style="position:absolute; z-index: 1; margin-top: 7px; width:25px;" alt="">
+          <img src="{% static 'images/number-2.png' %}" style="position:absolute; z-index: 1; margin-top: 50px; width:25px;" alt="">
+          <img src="{% static 'images/three.png' %}" style="position:absolute; z-index: 1; margin-top: 90px; width:25px;" alt="">
+          <img src="{% static 'images/number-four.png' %}" style="position:absolute; z-index: 1; margin-top: 130px; width:25px;" alt="">
+          <img src="{% static 'images/number-5.png' %}" style="position:absolute; z-index: 1; margin-top: 170px; width:25px;" alt="">
+          <img src="{% static 'images/six.png' %}" style="position:absolute; z-index: 1; margin-top: 210px; width:25px;" alt="">
+          {% for talks in talk %}
+            <ul class="list-group list-group-flush ">
+              <a href="{% url 'talk:talk_detail' talks.pk%}" style="text-decoration: none; color:black;">
+                <li class="list-group-item mx-3">{{ talks.title }}
+                </a>
+                <img style="width:15px; margin-top:-5px; " src="{% static 'images/view.png' %}" alt="">
+                <span class="text-black" style="color:blue; font-size: 13px;">{{ talks.hits }}</span>
+                <img style="width:15px; margin-top:-5px; " src="{% static 'images/like.png' %}" alt="">
+                <span class="text-black" style="position: absolute; font-size: 13px; margin-left: 02px; margin-top:4px;">
+                  {{ talks.like.all | length }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <img style="width: 15rem;" src="{% static 'images/banner.png' %}" alt="">
+    </aside>
+  </div>
+{% endblock %}

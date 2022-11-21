@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load social_share %}
+{% load django_bootstrap5 %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0"/>
+
+{% block content %}
+  <span class="d-none">{{ text.update_hits }}</span>
+  <div class="container d-flex justify-content-center my-5">
+    <div class=" p-5 rounded-4 shadow-lg col-10 " style="clear: both; display: block; position: relative;">
+      <a style="text-decoration:none; color:gray; font-size: 20px;" href="{% url 'movie:movie_talk' %}">영화수다</a>
+      <div style="border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; line-height: 1.5em;">
+        <h2 class="text-black " style="margin-top: 1rem; font-size: 25px;">{{ text.title }}
+          <span style="float: right; display: inline!important; margin-top: 0.2rem;  font-size: 15px;">{{ text.created_at|date:'Y.m.d H:i' }}</span></h2>
+        <div style="clear: both; display: block; position: relative;"></div>
+      </div>
+      <div class="my-2" style="position: static;">
+        <a class="mb-0 pt-1 text-secondary" style="text-decoration:none;" href="{% url 'accounts:profile' text.user.nickname %}">
+          {% if text.user.profile_image %}
+            <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{{ text.user.profile_image.url }}" alt="">
+          {% else %}
+            <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{% static 'images/logo.png' %}" alt="">
+          {% endif %}
+          <span>{{ text.user.nickname }}
+          </span>
+        </a>
+        <span style="float: right; display: inline!important; margin-top: 0.5rem;  font-size: 15px;">댓글
+          {{ comments|length }}</span>
+        <span style="float: right; display: inline!important; margin-right: 0.5rem; margin-top: 0.5rem;  font-size: 15px;">추천 수
+          {{ text.like.all | length }}</span>
+        <span style="float: right; display: inline!important; margin-top: 0.5rem; margin-right: 0.5rem;  font-size: 15px;">조회 수
+          {{ text.hits }}</span>
+      </div>
+      <hr>
+      <div class="d-flex justify-content-center my-3">
+        {% if text.mov_image %}
+          <img src="{{ text.mov_image.url }}" alt="">
+        {% endif %}
+      </div>
+      <div class="d-flex justify-content-center my-3">
+        <p class="text-black">{{ text.content | safe }}</p>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a class="mx-3" href="{% url 'movie:like' text.pk %}">
+          <img style="width: 2.6rem; position: block; " src="{% static 'images/positive-vote.png' %}" alt="">
+        </a>
+        <span class="" style="position: block; border-radius: 5px; display: flex; align-items: center; justify-content: center; border: 1px solid gray; width: 2.7rem; ">
+          {{ text.like.all | length }}</span>
+        <a class="mx-3" href="{% url 'movie:like' text.pk %}">
+          <img style="width: 2.6rem; position: block; " src="{% static 'images/negative-vote.png' %}" alt="">
+        </a>
+      </div>
+      <div class="text-end">
+        {% if request.user == text.user %}
+          <a href="{% url 'movie:mov_update' text.pk %}" class="btn btn-sm btn-outline-dark">수정</a>
+          <a href="{% url 'movie:mov_delete' text.pk %}" class="btn btn-sm btn-outline-dark">삭제</a>
+        {% endif %}
+      </div>
+      <hr>
+      <h5 class="text">댓글 ({{ comments|length }})</h5>
+      <hr>
+      <ul class="list-group list-group-flush rounded-2">
+        {% for comment in comments %}
+          <li class="list-group-item align-middle">
+            <div class="d-flex justify-content-between align-items-center">
+              <a class="card-text text-muted m-2" href="{% url 'accounts:profile' comment.user.nickname %}">
+                {% if comment.user.profile_image %}
+                  <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{{ comment.user.profile_image.url }}" alt="">
+                {% else %}
+                  <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{% static 'images/logo.png' %}" alt="">
+                {% endif %}
+                {{ comment.user.nickname }}
+              </a>
+              <p class="card-text text-muted pt-3">{{ comment.created_at|date:'Y-m-d' }}</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center m-2">
+              <p class="">
+                {{ comment.content }}
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      <form class="my-5" action="{% url 'movie:mov_comment'  text.pk %}" method="POST">
+        {% csrf_token %}
+        <div class="row d-flex justify-context-space-between">
+          <div class="col-8 col-md-9 col-xl-10 align-middle">
+            {% bootstrap_field comment_form.content %}
+          </div>
+          <div class="col-1 align-middle">
+            <input class="btn btn-small btn-dark" type="submit">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

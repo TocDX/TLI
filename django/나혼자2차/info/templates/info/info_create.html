@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="container d-flex justify-content-center py-5">
+    <div class="col-9 border border-black rounded-1">
+      <div class="card-body">
+        <form action="" method="POST" class="px-5 py-3 d-flex flex-column" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% bootstrap_form com_form %}
+          <input type="submit" class="btn btn-dark align-self-center" value="게시">
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,38 @@
+body {
+  background-color: #efefef;
+}
+
+header {
+  background-color: #3a3a3a;
+}
+
+header .inner {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+header ul.menu {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+header ul.menu li{
+  display: flex;
+  
+}
+
+header ul.menu li a {
+  padding: 0 10px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  color: white;
+  opacity: .8;
+  text-decoration: none;
+}
+
+header ul.menu li a:hover{
+  opacity: 1;
+}

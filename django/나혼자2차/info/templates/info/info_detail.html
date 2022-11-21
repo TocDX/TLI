@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/info_deatil.css' %}">
+  <span class="d-none">{{ info.update_hits }}</span>
+  <div class="bg__img">
+    <div class="bg__gr">
+      <section class="container d-flex movie-info py-5">
+        {% if info.image %}
+          <img style="display: block; position: relative; width: 300px; height: 400px; border-radius: 10px; top: -27px; right: 120px; filter: brightness(80%);" src="{{ info.image.url }}" alt="">
+        {% endif %}
+        <div class="movie-text text-white ms-5" style="display: block; position: relative; right: 120px;">
+          <h2>{{ info.title }}</h2>
+          <p>
+            <img class="mx-2" style="width:1.5rem; position:relative;  " src="{% static 'images/view.png' %}" alt="">{{ info.hits }}
+            <img class="mx-2" style="width:1.5rem; position:relative; top:-5px;" src="{% static 'images/like.png' %}" alt="">{{ info.like.all | length }}
+            <img class="mx-2" style="width:1.5rem; position:relative; " src="{% static 'images/comment.png' %}" alt="">{{ comments|length }}</p>
+          <p style="position: relative; top: 2rem;">{{ info.content }}</p>
+          <div style="position: relative; display: block; top: 150px;">
+            <button class="me-3 btn btn-outline-light px-4">
+              <a style="text-decoration: none; color: white;" href="https://watcha.com/">
+                <img class="btn-img me-1" src="https://media.discordapp.net/attachments/993055012529905675/1019434901612806214/99453fde-4624-457f-8471-2393b96ccdbb.jpeg"/>
+                왓챠</a>
+            </button>
+            <button class="me-3 btn btn-outline-light px-4">
+              <a style="text-decoration: none; color: white;" href="https://www.netflix.com/kr/">
+                <img class="btn-img me-1" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Netflix-new-icon.png"/>
+                넷플릭스</a>
+            </button>
+            <button class="btn btn-outline-light px-4">
+              <a style="text-decoration: none; color: white;" href="https://www.wavve.com/">
+                <img class="btn-img me-1" src="https://img.utdstc.com/icon/5c2/842/5c2842c0b9511c763d138d2fa414dd46b78a6239dd798fb8b44eefdf696605c3:200"/>
+                웨이브</a>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+<div class="my-5 d-flex justify-content-center">
+  <a class="mx-3" href="{% url 'info:like' info.pk %}">
+    <img style="width: 2.6rem; position: block; " src="{% static 'images/positive-vote.png' %}" alt="">
+  </a>
+  <span class="" style="position: block; border-radius: 5px; display: flex; align-items: center; justify-content: center; border: 1px solid gray; width: 2.7rem; ">
+    {{ info.like.all | length }}</span>
+  <a class="mx-3" href="{% url 'info:like' info.pk %}">
+    <img style="width: 2.6rem; position: block; " src="{% static 'images/negative-vote.png' %}" alt="">
+  </a>
+</div>
+<hr>
+<h5 class="text">댓글 ({{ comments|length }})</h5>
+<hr>
+<ul class="list-group list-group-flush rounded-2">
+  {% for comment in comments %}
+    <li class="list-group-item align-middle">
+      <div class="d-flex justify-content-between align-items-center">
+        <a class="card-text text-muted m-2" href="{% url 'accounts:profile' comment.user.nickname %}">
+          {% if comment.user.profile_image %}
+            <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{{ comment.user.profile_image.url }}" alt="">
+          {% else %}
+            <img style="width:2rem; overflow: hidden; height:2rem;  border-radius: 100%; object-fit: cover;" src="{% static 'images/logo.png' %}" alt="">
+          {% endif %}
+          {{ comment.user.nickname }}
+        </a>
+        <p class="card-text text-muted pt-3">{{ comment.created_at|date:'Y-m-d' }}</p>
+      </div>
+      <div class="d-flex justify-content-between align-items-center m-2">
+        <p class="">
+          {{ comment.content }}
+        </p>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+<form class="my-5" action="{% url 'info:info_comment'  info.pk %}" method="POST">
+  {% csrf_token %}
+  <div class="row d-flex justify-context-space-between">
+    <div class="col-8 col-md-9 col-xl-10 align-middle">
+      {% bootstrap_field comment_form.content %}
+    </div>
+    <div class="col-1 align-middle">
+      <input class="btn btn-small btn-dark" type="submit">
+    </div>
+  </div>
+</form>
+</div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% load django_bootstrap5 %}
+
+  <div class="container d-flex justify-content-center py-5">
+    <div class="border border-1 rounded-4 col-10 review-detail">
+      <div class="review-detail rounded-4 shadow-lg p-3">
+        <h1 class="text-center mt-5 mb-3 fs-3 fw-bold text-black">회원정보 수정</h1>
+        <div class="card-body">
+          <form action="{% url 'accounts:update' %}" method="POST" enctype="multipart/form-data" class="text-dark px-5 py-3">
+            {% csrf_token %}
+            {% bootstrap_field form.nickname %}
+            {% bootstrap_field form.name %}
+            {% bootstrap_field form.profile_image %}
+            <div class="text-end mt-4">
+              <input type="submit" class="btn btn-warning" value="Save">
+              <a class=" btn btn-dark ms-3" href="{% url 'accounts:profile' user.pk %}" role="button">Back</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock content %}
