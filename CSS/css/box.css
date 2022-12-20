@@ -1,0 +1,25 @@
+div{
+    width: auto;
+    height: auto;
+    background-color: orange;
+}
+
+span{
+    
+    width: auto;
+    height: auto;
+    background-color: orange;
+}
+
+
+.parent{
+    width: 200px;
+    height: 200px;
+    background-color: royalblue;
+}
+
+.child {
+    min-width: 400px;
+    height: 100px;
+    background-color: orange;
+}
