@@ -90,3 +90,64 @@
 
 ### padding 속성의 특징은?
     - 요소의 크기가 늘어난다
+
+
+## 보더(border)
+
+- border = 요소의 테두리 선을 지정하는 단축 속성
+
+- border-width(선-두께)
+    - 요소 테두리 선의 두께
+    - 기본값 medium: 중간 두께
+    - 단위 px, em, % 등 단위로 지정 
+    
+- border-style(선-종류)
+    - 요소 테두리 선의 종류
+    - 기본값 none: 선 없음
+    - solid : 실선(일반 선)
+    - dashed : 파선
+
+- border-color(선-색상)
+    - 요소 테두리 선의 색상을 지정하는 단축 속성
+    - 기본값 black
+    - 색상 : 선의 색상
+    - transparent : 투명
+    
+### boraer 속성의 특징은?
+    - 요소의 크기가 늘어남
+
+### 두께 2px, 종류 실선, 색상 빨강의 테두리 선을 코드로 작성하시오.
+    - border: 2px solid red;
+
+## border-radius
+
+- border-radius = 요소의 모서리를 둥글게 깎음
+    - 기본값 0 : 둥글게 없음
+    - 단위 : px, em, vw 등 단위로 지정
+
+## box-sizing
+
+- 요소의 크기 계산 기준을 지정
+    - 기본값 content-box 요소의 내용(content)으로 크기 계산
+    - boder-box 요소의 내용 + padding + border로 크기 계산
+
+## 출력 특성(display)
+
+- 요소의 화면 출력(보여짐) 특성
+    - block : 상자(레이아웃)요소
+    - inline : 글자 요소
+    - inline-block : 글자 + 상자 요소
+    - flex : 플렉스 박스 (1차원 레이아웃)
+    - grid : 그리드 (2차원 레이아웃)
+    - none : 보여짐 특성 없음, 화면에서 사라짐
+    - 기타 : table, table-row, table-cell 등 ..
+
+
+## 배치(position)
+
+- 요소의 위치 지정 기준
+    - static : 기준없음
+    - relative : 요소 자신을 기준
+    - absolute : 위치 상 부모 요소를 기준
+    - fixed : 뷰포트(브라우저)를 기준
+    - sticky : 스크롤 영역 기준
