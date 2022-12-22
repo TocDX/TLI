@@ -1,6 +1,9 @@
+
+
 .container{
     width: 300px;
     background-color: royalblue;
+    
 
 }
 
@@ -8,23 +11,22 @@
 .container .item{
     border: 4px dashed red;
     background-color: orange;
-}
-
-.container .item:nth-child(1){
     width: 100px;
     height: 100px;
 }
 
+.container .item:nth-child(1){
+    position: relative;
+    z-index: 1;
+}
+
 .container .item:nth-child(2){
-    width: 140px;
-    height: 70px;
     position: absolute;
-    top:  30px;
-    left: 200px;
+    top: 50px;
+    left: 50px;
 
 }
 
 .container .item:nth-child(3){
-    width: 70px;
-    height: 120px;
+    z-index: 2;
 }

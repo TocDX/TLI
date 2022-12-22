@@ -151,3 +151,136 @@
     - absolute : 위치 상 부모 요소를 기준
     - fixed : 뷰포트(브라우저)를 기준
     - sticky : 스크롤 영역 기준
+
+- 요소 쌓임 순서 (Stack order)
+    - 어떤 요소가 사용자와 더 가깝게 있는지(위에 쌓이는지)결정
+    1. 요소에 position 속성의 값이 있는 경우 위에 쌓임. (기본값 static 제외)
+    2. 1번 조건이 같은 경우, z-index 속성의 숫자 값이 높을 수록 위에 쌓임.
+    3. 1번과 2번 조건까지 같은 경우, HTML의 다음 구조일 수록 위에 쌓임.
+
+- z-index 
+    - 요소의 쌓임 정도를 지정
+        - 기본값 auto : 부모 요소와 동일한 쌓임 정도
+        - 숫자 : 숫자가 높을 수록 위에 쌓임
+    - 요소의 display가 변경됨
+        - position 속성의 값으로 absolute, fixed가 지정된 요소는,
+          display 속성이 block으로 변경됨.
+
+
+### position 속성의 기본값은?
+    - static
+
+### 위치상 부모 요소를 기준으로 배치하는 position 속성의 값은?
+    - absolute
+
+### 뷰포트를 기준으로 배치하는 position 속성의 값은
+    - fixed
+
+### display 속성이 block 값으로 바뀌지 않는 position 속성의 값은?
+    1)absoult
+    2)relative - 정답
+    3)fixed
+
+## flex(정렬)
+
+    - display
+        - flex container의 화면 출력(보여짐)특성
+        - flex : 블록 요소와 같이 flex container 정의
+        - inline-flex : 인라인 요소와 같이 flex container 정의
+    
+    -flex-direction
+        - 주 축을 설정
+        - row : 행 축 (좌=>우)
+        - row-reverse : 행 축 (우=>좌)
+        - column : 열 축 (위=>아래)
+        - column-reverse : 열 축 (아래=>위)
+    
+    - flex-wrap
+        - flex items 묶음(줄 바꿈) 여부
+        - nowrap : 묶음(줄 바꿈) 없음
+        - wrap : 여러 줄로 묶음
+        - wrap-reverse : wrap의 반대 방향으로 묶음
+    
+    - justify-content
+        - 주 축의 정렬 방법
+        - flex-start : Flex Items를 시작점으로 정렬
+        - flex-end : Flex Items를 끝점으로 정렬
+        - center : Flex Items를 가운데 정렬
+        - space-between : 각 Flex Item 사이를 균등하게 정렬
+        - space-around : 각 Flex Item의 외부 여백을 균등하게 정렬
+    
+    - align-content
+        - 교차 축의 여러 줄 정렬 방법
+        - stretch : flex items를 시작점으로 정렬
+        - flex-start : flex items를 시작점으로 정렬
+        - flex-end : flex items를 끝점으로 정렬
+        - center : flex items를 가운데 정렬
+        - space-between : 각 Flex Item 사이를 균등하게 정렬
+        - space-around : 각 Flex Item의 외부 여백을 균등하게 정렬
+
+    - align-items
+        - 교차 축의 한 줄 정렬 방법
+        - stretch : flex items를 교차 축으로 정렬
+        - flex-start : flex items를 각 줄의 시작점으로 정렬
+        - flex-end : flex items를 각 줄의 끝점으로 정렬
+        - center : flex items를 각 줄의 가운데 정렬
+        - baseline : flex items를 각 줄의 문자 기준선에 정렬
+
+    - order
+        - flex item의 순서
+        - 0 : 순서 없음
+        - 숫자 : 숫자가 작을 수록 먼저
+
+    - flex-grow
+        - flex item의 증가 너비 비율
+        - 0 : 증가 비율 없음
+        - 숫자 : 증가 비율
+    
+    - flex-shrink
+        - flex item의 감소 너비 비율
+        - 1 : flex container 너비에 따라 감소 비율 적용
+        - 숫자 : 감소 비율
+    
+    - flex-basis
+        - flex item의 공간 배분 전 기본 너비
+        - auto : 요소의 content 너비
+        - 단위 : px, em, rem 등 단위로 지정
+
+### display:flex;가 지정된 요소의 자식 요소를 Flex ???이라 부릅니다. 이 ???에 들어갈 용어는?
+    - items
+
+### flex container의 주 축을 지정하는 속성은?
+    - flex-direction
+
+### flex-wrap 속성의 기본값은?
+    - nowrap
+
+### 교차 축의 한 줄 정렬을 위한 속성은?
+    - aling-items
+
+## transition(전환)
+    
+    - transitions
+        - 요소의 전환(시작과 끝) 효과를 지정하는 단축 속성
+        - trasition-property
+            - 전환 효과를 사용할 속성 이름을 지정
+            - all : 모든 속성에 적용
+            - 속성이름 : 전환 효과를 사용할 속성 이름 명시
+
+        - trasition-duration
+            - 전환 효과의 지속시간을 지정
+            - 0s : 전환 효과 없음
+            - 시간 : 지속시간(s)을 지정
+
+        - trasition-timing-function
+            - 전환 효과의 타이밍(Easing) 함수를 지정
+            - ease : 느리게-빠르게-느리게
+            - linear : 일정하게 
+            - ease-in : 느리게-빠르게
+            - ease-out : 빠르게-느리게
+            - ease-in-out : 느리게-빠르게-느리게
+
+        - trasition-delay
+            - 전환 효과가 몇 초 뒤에 시작할지 대기시간을 지정
+            - 0s : 대기시간 없음
+            - 시간 : 대기시간(s)을 지정
