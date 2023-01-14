@@ -326,3 +326,52 @@
     boxEl.textContent = 'HELLOW';
     console.log(boxEl.textContent)
     ```
+
+### 메소드체이닝(Method Chanining)
+    ```python
+    const a = 'Hello~';
+    // split : 문자를 인수 기준으로 쪼개서 배열로 반환
+    // reverse : 배열을 뒤집기
+    // join : 배열을 인수 기준으로 문자로 병합해 반환
+    const b = a.split('').reverse().join(''); // 메소드 체이닝
+
+    console.log(a); // Hello~
+    console.log(b); // ~olleH
+    ```
+
+### 퀴즈
+
+1. The quick brown fox 위 문장을 camelCase(낙타 표기법)로 작성하시오
+    - theQuickBrownFox
+
+2.  let fruits =  ['Apple', 'Banana', 'Cherry']; 위 데이터를 활용해 'Banana'를 콘솔 출력하시오.
+    - console.log(fruits[1])
+
+3. 불린 데이터(Boolean)에서 거짓을 의미하는 데이터는?
+    - false
+
+4. 값이 의도적으로 비어있음을 의미하는 데이터는?
+    - null
+
+5. {} 위 데이터의 종류는?
+    - Object(객체 데이터) - 틀렸음
+
+6. let obj = { abc:123 };
+   console.log(obj.xyz) 위 코드를 통해 콘솔 출력될 값은?
+   - undefined
+
+7. 값(데이터)을 재할당할 수 없는 변수 선언 키워드는?
+    - const
+
+8. 함수에서 값(데이터)을 반환하기 위해 사용하는 키워드는?
+    - let - 틀렸음 return이 정답
+
+9. sum(2, 4); 위 함수 호출에서 2, 4를 무엇이라 하는가?
+    - arguments(인수)
+
+10. function sum(a, b) { return a+b }
+    위 함수 선언의 a,b 같이 함수 호출에서 전달받은 인수를 함수 내부로 전달하기 위한 변수를 무엇이라 하는가?
+    - 매개변수(Parameters) - 틀림
+
+11. 이름이 없는 함수를 무엇이라 하는가?
+    - 익명함수
