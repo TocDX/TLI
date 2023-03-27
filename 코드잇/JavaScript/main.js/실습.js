@@ -169,3 +169,66 @@ let totalMoney = myMoney + myInterest;
 console.log('맡긴 금액은 ' + myMoney + '원 입니다.');
 console.log('이자는 ' + myInterest + '원 입니다.');
 console.log('최종 받을 금액은 ' + totalMoney + '원 입니다.');
+
+
+// 실습 설명
+// console.log()함수와, 문자열 개념을 이용해서 다음 두 문장을 출력하세요.
+
+// 한국 영화 역사상 아카데미상을 받은 것은 '기생충'이 처음이다.
+// 아리스토텔레스는 "인간은 사회적 동물이다."라고 말했다.
+
+console.log(`한국 영화 역사상 아카메디상을 받은 것은 '기생충'이 처음이다.`)
+console.log(`아리스토텔레스는 "인간은 사회적 동물이다."라고 말했다.`)
+
+
+
+// 실습 설명
+// console.log()함수와, 문자열 개념을 이용해서 다음 문장을 출력하세요.
+
+// 영화 '베테랑'에서 "어이가 없네~"라는 대사가 유명했다.
+
+console.log(`영화 '베테랑'에서 "어이가 없네~"라는 대사가 유명했다.`)
+
+
+// 실습 설명
+
+// 재원이는 카페 매니저입니다. 며칠 뒤면 아르바이트 근무자들 급여 정산을 해야 하는데요. 
+
+//근무자 별로 근무 시간을 계산해서 총 급여를 계산하는 calcWage 함수를 만들어 보려고 합니다.
+
+// 파라미터로 근무자 이름(name), 근무 시간(time), 그리고 시급(wage)을 전달받고 
+
+// 총 급여를 계산하기 위해 total 변수에 시간과 시급을 곱한 값을 담는 것까진 작성했는데,
+
+// 마지막으로 콘솔에 출력하는 부분이 남았습니다.
+
+// 지난 시간에 배운 템플릿 문자열 개념을 이용해서 아래의 문장이 출력되게 작성해주세요.\
+
+function calcWage(name, time, wage) {
+    let total = time * wage;
+
+    console.log(`${name}님의 근무 시간은 총 ${time}시간이며, 최종 급여는 ${total}원 입니다.`);
+}
+
+
+// 실습 설명
+
+// 숫자형을 담고 있는 변수들(material1, material3, material5)과 
+
+//문자열을 담고 있는 변수들(material2, material4)이 있습니다.
+
+// 변수들끼리 연산을 하여 result1에는 문자열 '34'를, result2에는 숫자형 34를 만들어 넣어 주세요!
+
+// 단, 절대 숫자값을 사용하지 마세요. result1과, result2는 반드시 material1~5 변수들의 연산식만 할당해야 합니다.
+
+// 실습 결과는 다음과 같아야 합니다.
+
+
+let material1 = 3;
+let material2 = '3';
+let material3 = 10;
+let material4 = '4';
+let material5 = 4;
+
+result1 = String( material1 * material3 + material5)
+result2 = Number( material2 + material4)
