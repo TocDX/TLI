@@ -467,3 +467,176 @@ console.log(result2);
 console.log(result3);
 console.log(result4);
 console.log(result5);
+
+
+
+// 실습 설명
+// 윤식이는 공연 티켓 판매 프로그램을 개발하고 있습니다.
+
+// 다른 부분은 어느 정도 정리가 되었는데,
+
+// 좌석 등급에 따라서 가격을 알려주는 부분을 해결하지 못했는데요. 
+
+// 힘들어하는 윤식이를 위해 switch문을 활용해서 각 등급이 선택되었을 때 등급에 따라
+
+// 가격을 표시해주는 checkPrice 함수를 완성해 주세요.
+
+let VIPPrice = 15;
+let RPrice = 13;
+let SPrice = 10;
+let APrice = 8;
+
+function checkPrice(grade) {
+	// 여기에 코드를 작성하세요
+    switch(grade){
+        case 'VIP':
+            console.log(`${grade}석은 ${VIPPrice}만원 입니다.`);
+            break;
+        case 'R':
+            console.log(`${grade}석은 ${RPrice}만원 입니다.`);
+            break;
+        case 'S':
+            console.log(`${grade}석은 ${SPrice}만원 입니다.`);
+            break;
+        case 'A':
+            console.log(`${grade}석은 ${APrice}만원 입니다.`);
+            break;
+        default:
+            console.log('VIP, R, S, A 중에서 하나를 선택해 주세요')
+            
+    }
+}
+
+
+// 실습 설명
+// for 반복문을 사용하여 1 이상 100 이하의 짝수를 모두 출력해 보세요.
+
+// i가 1일 때 100보다 작거나 같다면 1씩 증가
+for ( let i = 1; i <= 100; i++){
+    // i를 2로 나누었을 때 몫이 0이 되면 짝수
+    if (i % 2 === 0){
+    console.log(i);
+    }
+}
+
+
+// 실습 설명
+// 주어진 높이(height)에 맞게 '*'로 삼각형을 그려주는 함수 printTriangle을 완성해 봅시다.
+
+ 
+
+function printTriangle(height){
+    // 전역변수 
+    let star = '';
+    // i = 0이고 i가 높이보다 작아질때까지 i씩 증가
+    for ( let i = 0; i < height; i++ ){  
+        // for문에 *를 하나씩 증가
+        star += '*';
+        console.log(star)
+    }
+};
+
+
+
+
+console.log('높이: 1');
+printTriangle(1);
+
+console.log('높이: 3');
+printTriangle(3);
+
+console.log('높이: 5');
+printTriangle(5);
+
+
+// 실습 설명
+// while 반복문을 사용하여 1 이상 100 이하의 홀수를 모두 출력해 보세요.
+
+let i = 1
+
+while ( i <= 100){
+    if( i % 2 === 1){
+        console.log(i)
+    }
+    i++
+}
+
+
+// 정수 N의 약수는 N을 나누었을 때 나누어떨어지는 수입니다. 
+
+//만약 정수 i가 정수 N의 약수라면, N을 i로 나누었을 때 나머지가 0이 나와야 하는 거죠.
+
+// while문을 활용해서 정수 180의 약수를 모두 출력하고, 총 몇 개의 약수가 있는지 출력하는 프로그램을 작성해 보세요.
+
+
+const N = 180;
+
+let i = 1;
+
+while ( i <= N ){
+    if( N % i === 0 ){
+        console.log(i)
+    }
+    i++
+}
+console.log('180의 약수는 총 18개입니다.')
+
+
+
+// 반복문을 사용해서 구구단 프로그램을 만들어 봅시다.
+
+// for문과 while문 중 어떤 반복문을 사용해도 상관없습니다.
+
+for ( let i = 1; i <=9; i++){
+    for( let j = 1; j <= 9; j++){
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}
+
+
+
+
+// 피보나치 수열(Fibonacci Sequence)이라고 들어 보셨나요?
+
+// 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+
+// 우선 피보나치 수열의 1번 항과 2번 항은 각각 1입니다. 
+
+// 3번 항부터는 바로 앞 두 항의 합으로 계산됩니다. 예를 들어서 3번 항은 1번 항(1)과 2번 항(1)을 더한 2이며, 
+
+// 4번 항은 2번 항(1)과 3번 항(2)을 더한 3입니다.
+
+// 반복문을 활용해서 피보나치 수열의 첫 50개 항을 차례대로 출력하는 프로그램을 작성해 보세요.
+
+// for문과 while문 중 어떤 반복문을 사용해도 상관없습니다.
+
+let current = 1;
+let previous = 0;
+
+for (let i = 1; i <= 100; i++){
+    console.log(current);
+    let temp = previous;
+    previous = current;
+    current = current + temp;
+}
+
+
+
+// 이제 막 코딩을 배우기 시작한 시원이는 프로그래밍을 할 때 영어의 중요성을 새삼 느껴 다시금 영어 공부를 하기 시작했습니다.
+// 그런데 문득 영어공부도 하고 코딩공부도 할 겸 자바스크립트로 영어 단어장을 만들어 보려는 아이디어가 떠올랐습니다. 
+// 아래는 오늘 시원이가 외워야 할 영어 단어들인데요. 여러분들이 시원이가 되어서 오늘 외워야 할 영어단어 객체를 완성해 보세요!
+
+// 외워야 할 단어들
+// [function] = 함수
+// [variable] = 변수
+// [constant] = 상수
+// [local] = 지역의
+// [global] = 전반적인
+
+let myVoca = {
+    function: '함수',
+    variable: '변수',
+    constant: '상수',
+    local: '지역의',
+    global: '전반적인'
+};
