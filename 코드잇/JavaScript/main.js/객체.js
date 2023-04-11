@@ -49,3 +49,40 @@ console.log(codeit['born ' + ' Year']);
 console.log(codeit.bestCourse['title']);
 
 // 존재하지 않는 데이터에 접근하려한다면 undefined가 출력이 된다
+
+console.log(code)
+
+
+
+// 객체의 property 추가 제거 하기
+
+
+let codeit ={ 
+        name    value 
+        brandName:'코드잇',
+        'born Year': 2017,
+        isVeryNice: true,
+        worstCourse: null,
+        bestCourse: {
+            title: '자바스크립트 프로그래밍 기초',
+            language: 'JavaScript'
+        }
+};
+
+console.log(codeit.name);
+codeit.name = 'codeit';
+console.log(codeit.name)
+
+
+// 추가
+
+console.log(codeit.ceo);
+codeit.ceo = '강';
+console.log(codeit.ceo)
+
+
+// 삭제
+
+console.log(codeit.worstCourse);
+delete codeit.worstCourse;
+console.log(codeit.worstCourse);
