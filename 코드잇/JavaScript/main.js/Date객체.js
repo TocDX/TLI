@@ -25,3 +25,15 @@ console.log(timeDiff + '밀리초');
 console.log(timeDiff + '초');
 console.log(timeDiff / 1000 / 60 + '분');
 console.log(timeDiff / 1000 / 60 / 60 + '시간');
+
+
+// 간단하게 시간 정보 알아내기!
+// 간단하게 시간 정보를 표현하고 싶다면 아래와 같은 메소드를 활용해 볼 수도 있습니다.
+
+let myDate = new Date();
+
+console.log(myDate.toLocaleDateString()); // myDate가 가진 날짜에 대한 정보 (년. 월. 일)
+console.log(myDate.toLocaleTimeString()); // myDate가 가진 시간에 대한 정보 (시:분:초)
+console.log(myDate.toLocaleString()); // myDate가 가진 날짜와 시간에 대한 정보 (년. 월. 일 시:분:초)
+toLocaleDateString(), toLocaleTimeString(), toLocaleString() 
+// 메소드는 사용자의 브라우저에 설정된 국가의 표기에 맞춰 날짜와 시간을 보여줍니다. 

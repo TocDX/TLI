@@ -775,7 +775,89 @@ let jaeSangStart = new Date(2109, 6, 1);
 function workDayCalc(startDate) {
     let result = today.getTime() - jaeSangStart.getTime();
     let daydiff = result / 1000 / 60 / 60 / 24
-    console.log(`오늘은 입사한 지 ${daydiff}일째 되는 날 입니다.`)
+    console.log(`오늘은 입사한 지 ${daydiff + 1 }일째 되는 날 입니다.`)
 
 }
 
+
+
+// 여기, dataType 이라는 이름의 6개의 요소를 가진 배열이 있습니다.
+
+// 이 배열의 요소들을 모두 출력하는 프로그램을 작성해 보세요.
+
+// 반복문의 개념을 활용하시면 어렵지 않게 해결할 수 있습니다.
+let dataType = ['number', 'string', 'boolean', 'null', 'undefined', 'object'];
+
+    for (let i = 0; i < 6; i++ ){
+        console.log(dataType[i]);
+    }
+
+
+// 여기 이번 주 온도를 섭씨로 기록한 배열이 있습니다.
+
+// let celsiusTemps = [27, 25, 26, 22, 28, 27, 21];
+// 그런데, 미국에서 오랫동안 살다 온 태오는 아직 섭씨온도가 익숙하지 않은데요. 
+
+// 불편한 태오를 위해 각각의 섭씨온도들을 화씨로 변환해 봅시다. 화씨로 변환하는 공식은 아래와 같습니다.
+
+// // F: 화씨(fahrenheit), C: 섭씨(celsius)
+// F = ( C * 9 / 5 ) + 32;
+// 반복문을 이용해서 celsius 배열의 각 요소들을 화씨로 변환한 값을 fahrenheit 배열에 추가해 주세요.
+
+
+let celsiusTemps = [27, 25, 26, 22, 28, 27, 21];
+let fahrenheitTemps = [];
+
+// 여기에 코드를 작성하세요
+for (let i = 0; i < celsiusTemps.length; i++) {
+ fahrenheitTemps[i] = (celsiusTemps[i] * 9 / 5) + 32;
+
+}
+
+// fahrenheitTemps 테스트
+console.log(fahrenheitTemps);
+
+
+
+// splice 메소드를 활용하여 아래의 미션들을 수행하세요.
+
+// fruits 배열에 '토마토'를 삭제하고 그 자리에 '사과', '청포도'를 추가해 주세요.
+// fruits 배열의 첫 번째 요소를 삭제해 주세요.
+// ages 배열에 마지막 요소를 삭제해 주세요.
+// ages 배열의 2번, 3번 인덱스를 26, 28로 변경해 주세요.
+// numbers 배열에 1, 2, 3, 5, 8, 9를 순서대로 추가해 주세요.
+// 반복문을 활용해서 numbers 배열의 요소들 중 홀수를 모두 삭제해 주세요.
+
+
+let fruits = ['레몬', '토마토', '딸기', '바나나'];
+let ages = [20, 24, 25, 29, 30, 33];
+let numbers = [];
+
+// fruits 배열에 '토마토'를 삭제하고 그 자리에 '사과', '청포도' 를 추가해 주세요
+
+fruits.splice(1,1,'사과','청포도');
+
+// fruits 배열의 첫 번째 요소를 삭제해 주세요
+
+fruits.splice(0,1);
+
+// ages 배열에 마지막 요소를 삭제해 주세요
+
+ages.splice(5,5);
+
+// ages 배열의 2번, 3번 인덱스를 26, 28로 변경해 주세요
+ages.splice(2,3, 26 , 28);
+
+
+// numbers 배열에 1, 2, 3, 5, 8, 9를 순서대로 추가해 주세요
+numbers.splice(0,0, 1, 2, 3, 5, 8, 9);
+
+
+// 반복문을 활용해서 numbers 배열의 요소들 중 홀수를 모두 삭제해 주세요
+
+for ( let i = 0; i < numbers.length; i++){
+    if (numbers[i] % 2 == 1){
+        numbers.splice(i,1);
+        i--;
+    }
+}
