@@ -904,3 +904,223 @@ let votes = [
   
   // 후보별 득표수 출력
   console.log(voteCounter);
+
+
+// 오늘은 풋살 동아리 경기가 있는 날입니다. 총인원 10명이서 5명씩 팀을 나누려고 하는데요.
+
+// 실력이 비슷한 사람들끼리 가위바위보를 했고, 이긴사람이 0번 index, 
+
+// 진 사람이 1번 index 배열을 만들어 정리했습니다.
+
+// 다음 groups 배열을 가지고, 이긴 사람끼리 그리고 진 사람끼리 팀을 나눠 teams 배열을 완성해 주세요.
+
+
+let groups = [
+	['영준', '캡틴'], 
+	['태순', '우재'],
+	['재훈', '지웅'],
+	['윤형', '동욱'],
+	['규식', '소원'],
+];
+
+let teams = [
+	[],
+	[],
+];
+
+// 여기에 코드를 작성하세요
+for (let i = 0; i  < groups.length; i++){
+    for (let j = 0; j < groups[i].length; j++) {
+        teams[j][i] = groups[i][j];
+    }
+}
+
+// 테스트 코드
+console.log(teams[0]);
+console.log(teams[1]);
+
+
+// 재테크를 시작하기로 마음먹은 규재는 오늘 은행에서 2년 만기 적금을 들었습니다.
+
+// 이자율이 4.3%고 세금은 내지않는 혜택도 받았는데요.
+
+// 큰 맘 먹고 시작한 재테크인 만큼 매월 80만원씩 저축하기로 했습니다.
+
+// 그런데 막상 생각해보니 당분간 생활비가 빠듯할 것 같아서 60만원씩 저축할 걸 후회 중인데요. 
+
+// 그래도 2년 뒤에 받게 될 금액으로 위안을 삼기 위해 적금 이자를 계산해 주는 함수를 만들어보려고 합니다.
+
+// 이자율(rate), 매월 납입 금액(payment), 납입 기간(term)을 파라미터로 전달하면, 
+
+// 만기 후 받게 될 이자를 출력해주는 interestCalculator 함수를 완성해 보세요.
+
+// n = 납입 개월 수
+// r = 이자율
+// v = 월 납입금 
+// 위와 같은 상황에서 이자 금액은 다음과 같은 식으로 계산할 수 있다고 합니다.
+
+// interest = v * n * (n+1) / 2 * r / 12
+
+
+
+function inter (v, n, r){
+    let interest = (v * n * (n+1) / 2 * r /12).tofixed(2)
+};
+
+
+
+// 무한도전 열혈 시청자인 대준이는 2013년 무한도전 자유로 가요제 때 발표한 '그래, 우리 함께'라는 
+
+// 노래를 정말 좋아합니다. 대준이는 인터넷에서 가사를 검색하고, 
+
+// 각 맴버별 파트를 그대로 복사해서 문자열로 lyrics라는 변수에 붙여 넣었습니다.
+
+// 방송 중에 울컥했던 정형돈씨의 장면이 가장 인상적이여서 형돈의 파트만 따로 떼어내 변수에 담아두고 싶어졌습니다.
+
+// lyrics 문자열에 적절한 메소드를 활용해서 형돈의 부분만 떼어내고 hyungdon 변수에 재할당 해주세요.
+
+
+let lyrics = "[재석]너에게 나 하고 싶었던 말 고마워 미안해 함께 있어서 할 수 있어서 웃을 수 있어[준하] 정말 고마웠어 내 손을 놓지 않아줘서 힘을 내볼게 함께 있다면 두렵지 않아[홍철] 내가 늘 웃으니까 내가 우습나 봐 하지만 웃을 거야 날 보고 웃는 너 좋아[명수] 자꾸만 도망치고 싶은데 저 화려한 큰 무대 위에 설 수 있을까? 자신 없어..[하하] 지금까지 걸어온 이 길을 의심하지는 마 잘못 든 길이 때론 지도를 만들었잖아[형돈] 혼자 걷는 이 길이 막막하겠지만 느리게 걷는 거야 천천히 도착해도 돼[길] 술 한 잔 하자는 친구의 말도 의미 없는 인사처럼 슬프게 들릴 때 날 찾아와";
+
+let hyungdon = null;
+
+// 여기에 코드를 작성하세요
+for (let hyun of lyrics){
+    console.log(hyun.indexOf('[형돈]'))
+}
+// 테스트 코드
+console.log(hyungdon);
+
+
+// 재훈이는 요즘 커피 공부에 빠져 있습니다.
+// 에스프레소를 기본으로 하는 커피 메뉴의 레시피를 배웠는데요.
+
+// 아메리카노는 에스프레소에 물을 더한 메뉴이고, 카페라떼는 에스프레소에 우유를 더한 메뉴라고 배웠습니다.
+
+// 그래서 이 레시피를 배열로 한번 정리해 보려고 아래와 같이 코드를 작성했습니다.
+
+// let espresso = ['espresso'];
+
+// let americano = espresso;
+// americano.push('water');
+
+// let caffeLatte = espresso;
+// caffeLatte.push('milk');
+
+// // 테스트 코드
+// console.log(espresso);
+// console.log(americano);
+// console.log(caffeLatte);
+// 나름대로 효율적으로 코드를 작성했다고 생각했는데, 막상 코드를 실행해보니 이상한 결과가 나왔는데요.
+
+// [ 'espresso', 'water', 'milk' ]
+// [ 'espresso', 'water', 'milk' ]
+// [ 'espresso', 'water', 'milk' ]
+// 재훈이가 겪은 문제를 해결하면서, 카페 모카(mocha) 와 바닐라 라떼(vanillaLatte) 레시피도 만들어 주세요.
+// 모카는 에스프레소에 우유와 초코 시럽을, 바닐라 라떼는 에스프레소에, 우유와 바닐라 시럽을 더한 메뉴입니다.
+
+
+
+// 중학교 때 배운 '계승(팩토리얼)' 기억하시나요?
+
+// 1부터 어떤 양의 정수 n까지의 정수를 모두 곱한 것을 말하며 n!로 나타낸다.
+
+// "계승" 네이버 지식백과 바로가기
+
+// 팩토리얼은 아래와 같이 계산합니다. 0!은 1이라는 점도 기억해주세요.
+
+// 0! = 1
+// 1! = 1
+// 2! = 1 * 2 = 2
+// 3! = 1 * 2 * 3 = 6
+// 4! = 1 * 2 * 3 * 4 = 24
+// 5! = 1 * 2 * 3 * 4 * 5 = 120
+// 6! = 1 * 2 * 3 * 4 * 5 * 6 = 720
+// 그러면, 파라미터로 양의 정수 n을 받고 n!을 계산해서 리턴해 주는 함수 factorial을 작성해 주세요..
+
+
+function factorial(n) {
+    let result = 1;
+      
+      // 여기에 코드를 작성해 주세요.
+    for (let i = 1; i <= n; i++){
+        result = i * result;
+    }
+      
+    return result;
+  }
+
+
+
+// 현태는 현명하게 거스름돈을 계산해 주는 프로그램을 만들려고 합니다. 
+
+// 예를 들어 33,000원짜리 물건을 사기 위해 100,000원을 냈다면,
+
+// 50,000원 1장
+// 10,000원 1장
+// 5,000원 1장
+// 1,000원 2장
+// 이런 식으로 '가장 적은 수'의 지폐를 거슬러 주는 것입니다. 방금 같은 경우에는 총 5장을 거슬러 준 거죠.
+
+// 우리는 calculateChange라는 함수를 작성하려고 하는데요.
+
+// 이 함수는 지불한 금액을 나타내는 payment와 물건의 가격을 나타내는 cost를 파라미터로 받습니다.
+
+// 주어진 코드에 이어서 깔끔하게 프로그램을 작성해 보세요.
+
+
+function calculateChange(payment, cost) {
+    // 여기에 코드를 작성하세요
+   let change = payment - cost;
+   const fiftyCount = (change - (change % 50000)) / 50000;
+   change = change - 50000 * fiftyCount;
+   const onehCount = (change - (change % 10000)) / 10000;
+   change = change - 10000 * onehCount;
+   const fiveCount = (change - (change % 5000)) / 5000;
+   change = change - 5000 * fiveCount;
+   const oneCount = (change - (change % 1000)) / 1000;
+   change = change - 1000 * oneCount;
+   console.log(`50000원 지폐: ${fiftyCount}장`);
+   console.log(`10000원 지폐: ${onehCount}장`);
+  console.log(`5000원 지폐: ${fiveCount}장`);
+  console.log(`1000원 지폐: ${oneCount}장`);
+  }
+  
+  // 테스트 코드
+  calculateChange(100000, 33000);
+  console.log('');
+  calculateChange(500000, 378000);
+
+
+//   "토마토"나 "기러기"처럼 거꾸로 읽어도 똑같은 단어를 '팰린드롬(palindrome)'이라고 부릅니다.
+
+// 팰린드롬 여부를 확인하는 함수 isPalindrome을 작성하려고 하는데요. 
+
+// isPalindrome은 파라미터 word가 팰린드롬이면 true를 리턴하고 팰린드롬이 아니면 false를 리턴합니다.
+
+// 예를 들어서 "racecar"과 "토마토"는 거꾸로 읽어도 똑같기 때문에 true가 출력되어야 합니다.
+
+// 그리고 "hello"는 거꾸로 읽으면 "olleh"가 되기 때문에 false가 나와야 하는 거죠.
+
+function isPalindrome(word) {
+    // 여기에 코드를 작성하세요
+    let forword = '';
+    let back = '';
+  for (let i = 0; i <= word.length; i++){
+    forword += word[i];
+    back += word[word.length - i - 1];
+  }
+  if (forword === back){
+    return true;
+  }else{
+    return false;
+  }
+  }
+  
+  // 테스트 코드
+  console.log(isPalindrome("racecar"));
+  console.log(isPalindrome("stars"));
+  console.log(isPalindrome("기러기"));
+  console.log(isPalindrome("123321"));
+  console.log(isPalindrome("hello"));
+  console.log(isPalindrome("kayak"));
