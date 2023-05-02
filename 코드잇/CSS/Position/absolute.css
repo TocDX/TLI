@@ -1,0 +1,50 @@
+body {
+    background-color: #f9fafc;
+    margin: 60px;
+}
+
+.box {
+    color: #f9fafc;
+    padding: 30px;
+
+}
+
+.red {
+    background-color: #e46e80;
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+.blue {
+    background-color: #5195ee;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    top: 40px;
+    left: 90px;
+}
+
+.green {
+    background-color: #32b9c1;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    
+}
+
+.orange{
+    background-color: #f18575;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.pulple{
+    background-color: ;
+}
+
+.yellow{
+    background-color: #fbc85b;
+}

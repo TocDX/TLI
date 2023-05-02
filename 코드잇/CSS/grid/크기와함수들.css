@@ -1,0 +1,44 @@
+body {
+    background-color: #f9fafc;
+    margin: 60px;
+  }
+  
+  .container {
+    border: 5px dashed #cacfd9;
+    width: 100%;
+    height: 500px;
+    display: grid;
+    grid-template:
+        1fr 1fr 1fr /
+        repeat(5 , 1fr)  /* 사용하기 번거롭기에 repeat 함수를 사용 */
+        /* 최소 px min max */
+        /*유연한 크기를 위해 px 대신 fr을 사용 */
+  }
+
+  
+  .box {
+    border-radius: 15px;
+    color: #f9fafc;
+    padding: 10px;
+  }
+  
+  .red {
+    background-color: #e46e80;
+  }
+  
+  .green {
+    background-color: #32b9c1;
+  }
+  
+  .blue {
+    background-color: #5195ee;
+  }
+  
+  .purple {
+    background-color: #8579ef;
+  }
+  
+  .orange {
+    background-color: #f18575;
+  }
+  
