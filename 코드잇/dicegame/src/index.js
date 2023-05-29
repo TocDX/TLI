@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-
+import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root')); // index.html파일이 열리고 실행되는데 리액트 코드들 중에서 가장 먼저 실행되는 파일.
 root.render(

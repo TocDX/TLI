@@ -1,43 +1,38 @@
+import Board from "./Board";
 import { useState } from 'react';
-import Dice from'./dice';
 import Button from './Button';
+import './App.css'
 
 function random(n){
     return Math.ceil(Math.random() * n);
 }
 
 function App(){
-    const [num, setNum] = useState(1);
-    const [sum, setSum] = useState(0);
-    const [gameHistory, setGameHistory] = useState([]);
+    const [myHistory, setMyHistory] = useState([]); 
+    const [otherHistory, setOtherHistory] = useState([]);
 
     const handleRollClick = () => {
-        const nextNum = random(6);
-        setNum(nextNum);
-        setSum(sum + nextNum);
-        // gameHistory.push(nextNum);
-        setGameHistory([...gameHistory, nextNum]);
+        const nextMyNum = random(6);
+        const nextOtherNum = random(6);
+        setMyHistory([...myHistory, nextMyNum]);;
+        setOtherHistory([...otherHistory, nextOtherNum]);
     };
 
     const handleClearClick = () => {
-        setNum(1);
-        setSum(0);
-        setGameHistory([]);
+        setMyHistory([]);
+        setOtherHistory([]);
     }
 
-    
     return (
-        <div>
+        <div className="App">
             <div>
-                <Button onClick={handleRollClick}>던지기</Button>
-                <Button onClick={handleClearClick}>처음부터</Button>
+                <Button className="App-button" color='blue' onClick={handleRollClick}>던지기</Button>
+                <Button className="App-button" color='red' onClick={handleClearClick}>처음부터</Button>
             </div>
-            <h2>나</h2>
-            <Dice color="red" num={num}/>
-            <h2>총점</h2>
-            <p>{sum}</p>
-            <h2>기록</h2>
-            <p>{gameHistory.join(', ')}</p>
+            <div>
+                <Board name="나" color="blue" gameHistory={myHistory}/>
+                <Board name="상대" color="red" gameHistory={otherHistory}/>
+            </div>
         </div>
     );
 }
